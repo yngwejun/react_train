@@ -1,0 +1,26 @@
+{
+  "name": "webre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y1232112/react_train.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y1232112/react_train/issues"
+  },
+  "homepage": "https://github.com/y1232112/react_train#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "babel-standalone": "^6.26.0",
+    "font-awesome": "^4.7.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}

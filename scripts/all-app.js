@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>热门项目</title>
-    <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
- <!--    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
-    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
-    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
-    <script src="node_modules\react\umd\react.production.min.js"></script>
-    <script src="node_modules\react-dom\umd\react-dom.production.min.js"></script>
-    <script src="node_modules\axios\dist\axios.min.js"></script>
-    <script src="node_modules\babel-standalone\babel.min.js"></script>
-    
-</head>
-<body>
-    <div id=container ></div>
-    <script type="text/babel" src="scripts/all-app.js">
-   /* class InfoBar extends React.Component{
+class InfoBar extends React.Component{
     constructor(props) {
             super(props);
             this.state={repos : []};
@@ -33,7 +10,7 @@
             this.setState({repos:res.data.items})
         }
         /*  */
-       /*  render(){
+        render(){
             var n=0;
             const list=this.state.repos.map((item,key)=><li key={item.id} style={{listStyle:'none',width:'280px',margin:'10px',backgroundColor:'rgba(0, 0, 0, 0.08)'}}><h3 style={{textAlign:'center'}}>#{++n}</h3> <img src={item.owner.avatar_url}
             
@@ -51,8 +28,8 @@
                 </div>
          
         }
-   } */
-   /* class NavHead extends React.Component{
+   }
+   class NavHead extends React.Component{
        render(){
            return <div style={{display:'flex',flexDirection:'row',width:'1200PX',justifyContent:'space-between'}}>
                   <ul style={{paddingLeft:'0px',display:'flex',flexDirection:'row',width:'130px',justifyContent:'space-between'}}>
@@ -66,8 +43,8 @@
                   <button style={{border:'none',backgroundColor:'white'}}><i class="fa fa-lightbulb-o" style={{width:'50px',fontSize:'20px'}}></i></button>
            </div>
        }
-   } */
-   /* class CenterLink extends React.Component{
+   }
+   class CenterLink extends React.Component{
        render(){
            return <div style={{width:'400px',margin:'0 auto'}}>
                   <ul style={{paddingLeft:'0px',width:'400px',display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
@@ -82,8 +59,8 @@
            
            </div>
        }
-   } */
-   /*  class Content extends React.Component{
+   }
+    class Content extends React.Component{
 
         render(){
             return <div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}>
@@ -94,8 +71,8 @@
             
             </div>
         }
-    } */
-    /* class App extends React.Component{
+    }
+    class App extends React.Component{
        render(){
            return <div>
                     
@@ -105,11 +82,8 @@
            
            </div>
        }
-   }  */
-   /* ReactDOM.render(
+   } 
+   ReactDOM.render(
          <App/>,
            document.getElementById('container')
-       ); */ 
-    </script>
-</body>
-</html>
+       );
