@@ -1,97 +1,56 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>个人实训内容</title>
-    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-    </script>
-<style>
-  h1{
-    text-align: center;
-  }
-  ul{
-     
-      list-style-type: none;
-    /*  */
-   /*   background-color: #777; */
-  }
-  #wrap{
-       width: 500px;
-       height: 500px;
-       margin: 200px auto;
-      
-  }
-  li{
-     padding: 5px ;
-     background-color: whitesmoke;
-     border-bottom: #777 dashed 1px;
-  }
-  li:last-child{
-    border-bottom-color: whitesmoke;
-  }
-  a{
-   text-decoration: none;
-   padding-left: 5px;
-   margin-right: 0;
-   color: black;
-  }
-  li:hover{
-    background-color: black;
-    color: white;
-  }
-  
-</style>
+    <title>热门项目</title>
+   <!--  <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css"> -->
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+   <!--  <script src="node_modules\react\umd\react.production.min.js"></script>
+    <script src="node_modules\react-dom\umd\react-dom.production.min.js"></script>
+    <script src="node_modules\axios\dist\axios.min.js"></script>
+    <script src="node_modules\babel-standalone\babel.min.js"></script> -->
+ <!--   <script src="node_modules\babel-standalone\babel.min.js"></script>  -->
+   <style>
+     .loading_wrap{
+         width: 1200px;
+         height: 500px;
+         margin: 200px auto;
+     } 
+   .loading {
+    width: 3px; height:3px;
+    margin: 0 auto;
+    border-radius: 100%;                      /* 圆角 */
+    box-shadow: 0 -10px 0 1px #333,           /* 上, 1px 扩展 */
+                10px 0px #333,                /* 右 */    
+                0 10px #333,                  /* 下 */
+                -10px 0 #333,                 /* 左 */
+                              
+                -7px -7px 0 .5px #333,        /* 左上, 0.5px扩展 */
+                7px -7px 0 1.5px #333,        /* 右上, 1.5px扩展 */                    
+                7px 7px #333,                 /* 右下 */
+                -7px 7px #333;                /* 左下 */
+}
+.spin {
+    animation: spin 1s steps(8) infinite;
+}
+@keyframes spin {
+    from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+}
+   
+   </style>
+    
 </head>
 <body>
-   <div>
-        <h1>首页</h1>
-        <hr>
-   </div> 
-          <script>
-          $(document).ready(function(){
-           var n=$("ul li").length;
-           console.log(n);
-           for(var i=0;i<n;i++){
-             $("a").eq(i).before(i+1+".")
-           }
-           $("li").mouseenter(function(){
-            $(this).children("a").css(
-              {
-                "color":"white"
-              }
-            )
-           })
-           $("li").mouseleave(function(){
-            $(this).children("a").css(
-              {
-                "color":"black"
-              }
-            )
-           })
-            $("li").click(function(){
-              $(this).children("a")
-            })
-          });
-        /*   $("li").mouseleave(function(){
-              $(this).children("a").css(
-                {
-                  "color":"black"
-                }
-              )
-          }); */
-          </script>
-   <div id="wrap">
-          <h3>请访问以下主要地址：</h3>
-    <ul>
-             <li><a href="index.html">index.html首页&目录</a></li>
-            <li> <a href="remenxiangmu.html">remenxiangmu.html热门项目作业二</a></li>
-
-    
-
-    </ul>
-
-  </div>
-   
+    <div id="app"></div>
+      <script type="text/babel" src="src/index.js">
+    </script>
 </body>
 </html>
