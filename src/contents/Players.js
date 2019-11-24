@@ -30,7 +30,7 @@ class Players extends React.Component{
         
         if(this.state.playerTwo!=''&&this.state.playerTwo!=null){
             
-             console.log("player1设置成功！！！当前状态："+this.state)
+             console.log("player2设置成功！！！当前状态："+this.state)
                      var res2=await axios.get(`https://api.github.com/users/`+this.state.playerTwo);
              var img2=res2.data.avatar_url;
              var l2=res2.data.login;
@@ -67,7 +67,7 @@ class Players extends React.Component{
    
         } if(this.myInputTwo!=''||this.myInputTwo!=null){
               this.setState({playerTwo:this.myInputTwo.current.value});
-              console.log("player1设置成功！！！当前状态："+this.state);
+              console.log("player2设置成功！！！当前状态："+this.state);
       
          }
          

@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "01e8e0100a10ae0cbd41";
+/******/ 	var hotCurrentHash = "d61ba112673ba13a687e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42212,7 +42212,7 @@ function (_React$Component) {
           playerTwo: _this.myInputTwo.current.value
         });
 
-        console.log("player1设置成功！！！当前状态：" + _this.state);
+        console.log("player2设置成功！！！当前状态：" + _this.state);
       }
 
       console.log("当前的值：" + _this.myInputOne.current.value);
@@ -42266,7 +42266,7 @@ function (_React$Component) {
                 break;
               }
 
-              console.log("player1设置成功！！！当前状态：" + this.state);
+              console.log("player2设置成功！！！当前状态：" + this.state);
               _context.next = 13;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("https://api.github.com/users/" + this.state.playerTwo));
 
