@@ -3,7 +3,7 @@ import React from "react";
 import axios from 'axios';
 import ImgShows from "./ImgShows";
 
-
+ 
 
 
 class Players extends React.Component{
