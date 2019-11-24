@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d61ba112673ba13a687e";
+/******/ 	var hotCurrentHash = "244df13e9e56e30f1a7b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -784,7 +784,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/react-train";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -35192,6 +35192,65 @@ exports.setConfig = setConfig;
 
 /***/ }),
 
+/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));function AppContainer(e){return AppContainer.warnAboutHMRDisabled&&(AppContainer.warnAboutHMRDisabled=!0,console.error("React-Hot-Loader: misconfiguration detected, using production version in non-production environment."),console.error("React-Hot-Loader: Hot Module Replacement is not enabled.")),React.Children.only(e.children)}AppContainer.warnAboutHMRDisabled=!1;var hot=function e(){return e.shouldWrapWithAppContainer?function(e){return function(n){return React.createElement(AppContainer,null,React.createElement(e,n))}}:function(e){return e}};hot.shouldWrapWithAppContainer=!1;var areComponentsEqual=function(e,n){return e===n},setConfig=function(){},cold=function(e){return e},configureComponent=function(){};exports.AppContainer=AppContainer,exports.hot=hot,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold,exports.configureComponent=configureComponent;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-hot-loader/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-hot-loader/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else if (false) {} else if (typeof window === 'undefined') {
+  // this is just server environment
+  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
+} else if (false) {} else {
+  var evalAllowed = false;
+  var evalError = null;
+  try {
+    eval('evalAllowed = true');
+  } catch (e) {
+    // eval not allowed due to CSP
+    evalError = e && e.message ? e.message : 'unknown reason';
+  }
+
+  // TODO: dont use eval to update methods. see #1273
+  // RHL needs setPrototypeOf to operate Component inheritance, and eval to patch methods
+  var jsFeaturesPresent = !!Object.setPrototypeOf;
+
+  if (!jsFeaturesPresent || !evalAllowed) {
+    // we are not in prod mode, but RHL could not be activated
+    console.warn(
+      'React-Hot-Loader is not supported in this environment:',
+      [
+        !jsFeaturesPresent && "some JS features are missing",
+        !evalAllowed && "`eval` is not allowed(" + evalError + ")"
+      ].join(','),
+      '.'
+    );
+    module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
+  } else {
+    module.exports = window.reactHotLoaderGlobal = __webpack_require__(/*! ./dist/react-hot-loader.development.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.development.js");
+  }
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/react-hot-loader/patch.js":
 /*!************************************************!*\
   !*** ./node_modules/react-hot-loader/patch.js ***!
@@ -35206,6 +35265,43 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./dist/react-hot-loader.development.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-hot-loader/root.js":
+/*!***********************************************!*\
+  !*** ./node_modules/react-hot-loader/root.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {if (true) {
+  var hot = __webpack_require__(/*! ./index */ "./node_modules/react-hot-loader/index.js").hot;
+  if (true) {
+    var cache = __webpack_require__.c;
+
+    if (!module.parents || module.parents.length === 0) {
+      throw new Error(
+        'React-Hot-Loader: `react-hot-loader/root` is not supported on your system. ' +
+        'Please use `import {hot} from "react-hot-loader"` instead'
+      );
+    }
+    // access parent
+    var parent = cache[module.parents[0]];
+    if (!parent) {
+      throw new Error(
+        'React-Hot-Loader: `react-hot-loader/root` is not supported on your system. ' +
+        'Please use `import {hot} from "react-hot-loader"` instead'
+      );
+    }
+    // remove self from a cache
+    delete cache[module.i];
+  }
+  // setup hot for caller
+  exports.hot = hot(parent);
+} else {}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -40294,6 +40390,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NavHead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NavHead */ "./src/contents/NavHead.js");
 /* harmony import */ var _BattleContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./BattleContent */ "./src/contents/BattleContent.js");
 /* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Content */ "./src/contents/Content.js");
+/* harmony import */ var react_hot_loader_root__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-hot-loader/root */ "./node_modules/react-hot-loader/root.js");
+/* harmony import */ var react_hot_loader_root__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader_root__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -40308,6 +40406,7 @@ __webpack_require__.r(__webpack_exports__);
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
   return a;
 };
+
 
 
 
@@ -40375,8 +40474,11 @@ function (_React$Component) {
 
   return App;
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+/*export default App; */
 
-var _default = App;
+
+var _default = Object(react_hot_loader_root__WEBPACK_IMPORTED_MODULE_9__["hot"])(App);
+
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 

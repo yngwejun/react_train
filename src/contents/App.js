@@ -2,6 +2,7 @@ import React from "react";
 import NavHead from './NavHead';
 import BattleContent from './BattleContent';
 import Content from './Content';
+import {host, hot} from 'react-hot-loader/root'
 /* 定义所用到的地址 */
 const scaleNames={
     path_all:'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories',
@@ -37,5 +38,6 @@ class App extends React.Component{
        
    }
    
-} 
-export default App;
+ } 
+/*export default App; */
+export default hot(App);

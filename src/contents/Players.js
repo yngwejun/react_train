@@ -158,7 +158,7 @@ class Players extends React.Component{
 event.stopPropagation();
 // 阻止与原生事件的冒泡
 event.nativeEvent.stopImmediatePropagation();
-         console.log('test123');
+         console.log('testxxxxximg');
          if(item=='PlayerOne'){
              this.setState({playerOne:''})
              this.myInputOne.current.value=null;

@@ -14,7 +14,7 @@ module.exports = function(env,argv) {
     output: {
       filename:'bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: '/react-train',
+      publicPath: '/',
     },
     
 
@@ -34,9 +34,12 @@ module.exports = function(env,argv) {
         },
     ]
     },
+    mode: 'development',
     devServer:{
+   
       hot:true,
-      contentBase: path.resolve(__dirname, 'dist'),
+      inline:true,
+      contentBase: './dist',
       
     },
     plugins:[

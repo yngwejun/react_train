@@ -23,7 +23,7 @@ class InfoBar extends React.Component{
                  var res=await axios.get(this.props.scale); 
                console.log('res',res.data);
                this.setState({repos:res.data.items});  
-              this.setState({loading:false});
+         
                   
           
        } 
@@ -31,10 +31,10 @@ class InfoBar extends React.Component{
     
      /* -------------------------------------- */
    async  componentWillReceiveProps(nextProps){
-    this.setState({loading:true});  
+    
     let res=await axios.get(nextProps.scale); 
     console.log('res',res.data);
-    this.setState({repos:res.data.items,loading:false});
+    this.setState({repos:res.data.items});
   
     }
    /* ---------------------------------------------- */
