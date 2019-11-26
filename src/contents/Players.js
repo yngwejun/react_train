@@ -206,7 +206,7 @@ event.nativeEvent.stopImmediatePropagation();
                     <button style={{height:'30px',width:'150px',marginLeft:'25px',border:'none',textDecoration:'none',cursor:'pointer'}} onClick={this.handleSubmit}>commit</button>
             
                     </from>
-                    </div>
+                    </div> 
                 </div>
                <div style={{display:'flex'}}>
                     {item=='PlayerOne'?
