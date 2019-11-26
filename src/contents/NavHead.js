@@ -1,37 +1,24 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 /* 组件：Popular &&&  Battle  组件*/
 class NavHead extends React.Component{
     constructor(props) {
         super(props);
-        this.state={isRedFlag:this.props.scale};
-        this.setState({isRedFlag:this.props.scale})
+    console.log("this.props:----Navheader---------",this.props);
     }
-    componentWillReceiveProps(props,nextProps){
-     this.setState({isRedFlag:props.scale});
+
  
- }
-    handleColor(t){
-        if(t==true&&this.state.isRedFlag==true){
-            return 'red'
-        }
-        else if(t==false&&this.state.isRedFlag==false){
-            return 'red'
-        }
-        else{
-            return 'black'
-        }
-    }
     render(){
-        return <div style={{display:'flex',flexDirection:'row',width:'1200PX',justifyContent:'space-between'}}>
+        return <div style={{display:'flex',flexDirection:'row',width:'1200PX',justifyContent:'space-between',margin:'0 auto'}}>
                <ul style={{paddingLeft:'0px',display:'flex',flexDirection:'row',width:'130px',justifyContent:'space-between'}}>
                   <li style={{padding:'0px',listStyle:'none'}}>
-                      <a style={{textDecoration:'none',color:this.handleColor(true)}} onClick={()=>{this.props.handlePages(true)}}>Popular</a>
+                      <NavLink exact={true} activeStyle={{color:"red"}} to="/" style={{textDecoration:'none',color:this.handlePublicColor}}>Popular</NavLink>
                   </li>
                   <li style={{padding:'0px',listStyle:'none'}}>
-                     <a style={{textDecoration:'none',color:this.handleColor(false)}} onClick={()=>{this.props.handlePages(false)}}>Battle</a>
+                     <NavLink  activeStyle={{color:"red"}}  to="/battle" style={{textDecoration:'none',color:this.handleBattleColor}}>Battle</NavLink>
                   </li>
                </ul>
-               <button style={{border:'none',backgroundColor:'white'}}><i class="fa fa-lightbulb-o" style={{width:'50px',fontSize:'20px'}}></i></button>
+               <button style={{border:'none',backgroundColor:'white'}}><i className="fa fa-lightbulb-o" style={{width:'50px',fontSize:'20px'}}></i></button>
         </div>
     }
 }

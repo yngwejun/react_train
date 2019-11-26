@@ -9,7 +9,7 @@ class ImgShows extends React.Component{
     }
 
     render(){
-        return <div style={{display:'flex'}}>
+        return <div style={{width:'450px',display:'flex'}}>
             <img src={this.props.img} style={{width:'40px',height:'40px'}}></img>
             <div style={{width:'60px'}}></div><h3>{this.props.login}</h3>
         </div>

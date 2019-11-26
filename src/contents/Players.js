@@ -140,7 +140,15 @@ class Players extends React.Component{
      }
           else return 'block' 
        }
-  
+    handleInputButnShows(item){
+        if(item=='PlayerOne'&&this.state.playerOne==''){
+            return 'block'
+               }
+           else if(item=='PlayerTwo'&&this.state.playerTwo==''){
+            return 'block'
+        }
+            else return 'none'
+    }
        /*  */
        buttonShow(){
           if(this.state.playerOne==''||this.state.playerOne==null||this.state.playerTwo==''||this.state.playerTwo==null)
@@ -185,11 +193,12 @@ event.nativeEvent.stopImmediatePropagation();
          <li style={{width:'500px',listStyle:'none'}}>
             <p>{item}</p>
             <div style={{backgroundColor:'rgba(0, 0, 0, 0.08)' ,visibility:this.reverseShows(item)}}>
-                <button style={{border:'none',width:'50px',height:'50px',marginLeft:'450px'}} onClick={event=>this.handleXimg(item,event)}>
+                {/* <button style={{border:'none',width:'50px',height:'50px',marginLeft:'450px'}} onClick={event=>this.handleXimg(item,event)}>
                     <i class="fa fa-close" style={{fontSize:'48px',color:'red'}}></i>
-                </button>
+                </button> */}
             
                 <div style={{visibility:this.handleShows(item)}}>
+                      <div  style={{display:this.handleInputButnShows(item)}}>
                     <from onSubmit={e => this.handleSubmit(item)}>
                 
                     <input class={this.handleClassName(item)}  placeholder="Github UserName" type="text" style={{width:'250px',height:'30px'}}
@@ -197,13 +206,17 @@ event.nativeEvent.stopImmediatePropagation();
                     <button style={{height:'30px',width:'150px',marginLeft:'25px',border:'none',textDecoration:'none',cursor:'pointer'}} onClick={this.handleSubmit}>commit</button>
             
                     </from>
+                    </div>
                 </div>
-               <div>
+               <div style={{display:'flex'}}>
                     {item=='PlayerOne'?
                      <div><ImgShows img={this.state.img_url_1} login={this.state.Ulogin1}/></div>
                      :
                      <div><ImgShows img={this.state.img_url_2} login={this.state.Ulogin2}/></div>
                }
+               <button style={{border:'none',width:'50px',height:'50px'}} onClick={event=>this.handleXimg(item,event)}>
+                    <i class="fa fa-close" style={{fontSize:'48px',color:'red'}}></i>
+                </button>
                </div>
             </div>
         </li>

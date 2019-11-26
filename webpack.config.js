@@ -38,11 +38,12 @@ module.exports = function(env,argv) {
     devServer:{
    
       hot:true,
-      inline:true,
+    /*   inline:true, */
       contentBase: './dist',
       
     },
     plugins:[
+ 
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
     ]

@@ -3,6 +3,8 @@ import Instructions from './Instructions';
 import Players from './Players';
 import BattleRes from './BattleRes';
 import axios from 'axios';
+import NavHead from "./NavHead";
+import {Router,Route ,HashRouter,Switch} from 'react-router-dom'
 class BattleContent extends React.Component{
     constructor(props) {
         super(props);
@@ -38,35 +40,44 @@ if(p1==null||p1==''||p2==null||p2==''){
   let UserDataOne=await axios.get(`https://api.github.com/users/`+p1);
   let  UserDataTwo=await axios.get(`https://api.github.com/users/`+p2);
   
-  this.setState({playerOneData:UserDataOne,playerTwoData:UserDataTwo,isBattleOnePage:false});
+  this.setState({playerOneData:UserDataOne,playerTwoData:UserDataTwo});
   
   console.log('UserData',"player1的编号："+UserDataOne.data.id+"player2的编号："+UserDataTwo.data.id);
+  this.props.history.push("/battle/battleres");
 }
 
   
 }
 
 /* -------------------------------------- */
-handlePreset(){
+/* handlePreset(){
     this.setState({isBattleOnePage:true});
-}
+} */
 /* ---------------------------------- */
 
     
     render(){
-        var v1 = this.state.value1;
-        var v2 = this.state.value2;
+       
         var pdt1=this.state.playerOneData;
         var pdt2=this.state.playerTwoData;
         return <div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}>
-            {this.state.isBattleOnePage?<div>
+           
+          {/*   {this.state.isBattleOnePage? */}
+  
+      
+          <Route path="/battle" exact={true}><div>
                <div style={{display :'flex',flexDirection:'row'}}><Instructions/></div>
                <div style={{display :'flex',flexDirection:'row'}}><Players handleGitUser={this.handleGitUser.bind(this)} playerOneData={pdt1} playerTwoData={pdt2}/></div>
             </div>
-            :<div>
-                <div><BattleRes handlePreset={this.handlePreset.bind(this)} playerOneData={this.state.playerOneData} playerTwoData={this.state.playerTwoData}/></div>
+        </Route>
+        <Route path="/battle/battleres" exact={true}>
+            <div>
+                <div><BattleRes playerOneData={this.state.playerOneData} playerTwoData={this.state.playerTwoData}/></div>
             </div>
-           }
+        </Route>
+       
+    
+     
 
 
 </div>

@@ -1,6 +1,10 @@
 import React from "react";
 import CenterLink from './CenterLink';
 import InfoBar from './InfoBar';
+import NavHead from "./NavHead";
+import { Route ,HashRouter,Switch} from 'react-router-dom';
+import BattleContent from "./BattleContent";
+import BattleRes from "./BattleRes";
 /* 定义所用到的地址 */
 const scaleNames={
     path_all:'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories',
@@ -65,11 +69,16 @@ const scaleNames={
      
    console.log(this.state.path);
         return <div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}>
-                   {/*  <div style={{display :'flex'}}><NavHead/></div> */}
+               
+           
+                 
+                
+                
                     <div style={{display :'flex'}}><CenterLink handlePath={this.handlePath.bind(this)} scale={this.state.path}/></div>
                     <div style={{display :'flex',flexDirection:'row'}}><InfoBar scale={this.state.path}/></div>
-        
-        
+               
+              
+              
         </div>
         
     }

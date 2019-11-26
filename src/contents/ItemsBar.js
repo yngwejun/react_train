@@ -26,7 +26,7 @@ class ItemsBar extends React.Component{
                                          <p style={{textAlign:'center'}}>{item.name}</p>
                                          <button style={{width:'200px',listStyle:'none',textAlign:'center',margin:'30px auto'
                          ,border:'none',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'rgba(0, 0, 0, 0.08)'}}>
-                                         <i class={item.clas} style={{color:item.color,fontSize:'100px'}}></i>
+                                         <i className={item.clas} style={{color:item.color,fontSize:'100px'}}></i>
                                          </button>
       </li>);
       /* --------------- */

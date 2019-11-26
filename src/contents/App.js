@@ -3,6 +3,14 @@ import NavHead from './NavHead';
 import BattleContent from './BattleContent';
 import Content from './Content';
 import {host, hot} from 'react-hot-loader/root'
+import { IndexRoute } from 'react-router-dom'
+import { Redirect } from 'react-router'
+import BattleRes from "./BattleRes";
+import {Link} from "react-router-dom";
+import { Router } from 'react-router-dom';
+
+import { Route ,HashRouter,Switch} from 'react-router-dom'
+
 /* 定义所用到的地址 */
 const scaleNames={
     path_all:'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories',
@@ -15,29 +23,35 @@ const scaleNames={
 class App extends React.Component{
     constructor(props) {
         super(props);
-        this.state={isPopular:true}
+     /*    this.state={isPopular:true} */
     }
-    handlePages(pageFlag){
+/*     handlePages(pageFlag){
 
         this.setState({isPopular:pageFlag})
-    }
+    } */
    render(){
        
-       return <div><div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}><NavHead handlePages={this.handlePages.bind(this)} scale={this.state.isPopular}/></div>
-       {this.state.isPopular?<div>
-           
-       <div><Content/></div>
-       </div>:<div>   
-          
-            <div><BattleContent/></div>
-            </div>
-     
-   }
-            </div>
+       return <div>
+        
+    <HashRouter>
+    <NavHead/>
+         <Switch>
+            <Route path="/" exact={true} component={Content}/>
+                 <Route  path="/battle" component={BattleContent}/>
+              
+             
+          </Switch>
+     </HashRouter>
        
+       </div>
+     
+           
+
+       
+   
        
    }
    
  } 
-/*export default App; */
+/* export default App; */
 export default hot(App);

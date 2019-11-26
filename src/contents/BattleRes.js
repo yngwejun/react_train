@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 
 class BattleRes extends React.Component{
     constructor(props) {
@@ -24,6 +24,7 @@ class BattleRes extends React.Component{
         }
         else return 'Loser'
     }
+
     
     render(){
           const p1_items=this.state.playerOneData.data;
@@ -32,7 +33,7 @@ class BattleRes extends React.Component{
           const p2=p2_items.public_repos;
          
 
-        return <div>
+        return <div>  
                         <div style={{width:'1200px',margin:'0 auto'}}>
                     <ul style={{margin:0,padding:0,display:'flex',justifyContent:'space-around'}}>
                         <li style={{listStyle:'none',width:'280px',margin:'10px',backgroundColor:'rgba(0, 0, 0, 0.08)'}}>
@@ -85,9 +86,9 @@ class BattleRes extends React.Component{
                         </li>
                     </ul>
                     <div style={{width:'1200px',margin:'20px auto',textAlign:'center'}}>
-                    <button style={{width:'400px',height:'60px',border:'none',textDecoration:'none',cursor:'pointer',backgroundColor:'black',color:'white',fontSize:'40px',fontWeight:'bold'}} onClick={this.props.handlePreset}>
+                <Link to="/battle">   <button style={{width:'400px',height:'60px',border:'none',textDecoration:'none',cursor:'pointer',backgroundColor:'black',color:'white',fontSize:'40px',fontWeight:'bold'}} >
                        preset
-                    </button>         
+                    </button>   </Link>      
                     </div>
                 </div>
         </div>

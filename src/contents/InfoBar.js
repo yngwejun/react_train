@@ -22,7 +22,7 @@ class InfoBar extends React.Component{
             
                  var res=await axios.get(this.props.scale); 
                console.log('res',res.data);
-               this.setState({repos:res.data.items});  
+               this.setState({repos:res.data.items,loading:false});  
          
                   
           
@@ -31,11 +31,11 @@ class InfoBar extends React.Component{
     
      /* -------------------------------------- */
    async  componentWillReceiveProps(nextProps){
-    
+    this.setState({loading:true})
     let res=await axios.get(nextProps.scale); 
     console.log('res',res.data);
     this.setState({repos:res.data.items});
-  
+    this.setState({loading:false});
     }
    /* ---------------------------------------------- */
 
@@ -47,11 +47,11 @@ class InfoBar extends React.Component{
             var n=0;
             const list=this.state.repos.map((item,key)=><li key={item.id} style={{listStyle:'none',width:'280px',margin:'10px',backgroundColor:'rgba(0, 0, 0, 0.08)'}}><h3 style={{textAlign:'center'}}>#{++n}</h3> <img src={item.owner.avatar_url}
             
-            style={{width:'200px',height:'200px',margin:'0 auto',display:'block'}}/><p style={{textAlign:'center'}}><a href={item.html_url} style={{textDecoration:'none',color:'red'}}>{item.name}</a></p><p style={{marginLeft:'10px'}}><i class="fa fa-user" style={{color:'rgb(233, 174, 14)'}}></i><a href={item.owner.html_url} style={{textDecoration:'none'}}>{item.name}</a></p>  <p style={{marginLeft:'10px'}}><i class="fa fa-star" style={{color:'yellow'}}></i>
-            {item.stargazers_count}</p> <p style={{marginLeft:'10px'}}> <i class="fa fa-code-fork" style={{color:'rgb(67, 120, 219)'}}></i>{item.forks}</p> 
-            <p style={{marginLeft:'10px'}}><i class="fa fa-warning" style={{color:'red'}}></i>{item.open_issues_count}</p></li>);
+            style={{width:'200px',height:'200px',margin:'0 auto',display:'block'}}/><p style={{textAlign:'center'}}><a href={item.html_url} style={{textDecoration:'none',color:'red'}}>{item.name}</a></p><p style={{marginLeft:'10px'}}><i className="fa fa-user" style={{color:'rgb(233, 174, 14)'}}></i><a href={item.owner.html_url} style={{textDecoration:'none'}}>{item.name}</a></p>  <p style={{marginLeft:'10px'}}><i className="fa fa-star" style={{color:'yellow'}}></i>
+            {item.stargazers_count}</p> <p style={{marginLeft:'10px'}}> <i className="fa fa-code-fork" style={{color:'rgb(67, 120, 219)'}}></i>{item.forks}</p> 
+            <p style={{marginLeft:'10px'}}><i className="fa fa-warning" style={{color:'red'}}></i>{item.open_issues_count}</p></li>);
               
-                return <div>{this.state.loading?<div class="loading_wrap"><div class="loading spin"></div></div>:
+                return <div>{this.state.loading?<div className="loading_wrap"><div className="loading spin"></div></div>:
                     <ul style={{width:'1200px',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-around',margin:0,padding:0,alignContent:'space-between'
                 ,minHeight:'3900px'}}>
                     
