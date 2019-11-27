@@ -2,12 +2,12 @@ import React from "react";
 import NavHead from './NavHead';
 import BattleContent from './BattleContent';
 import Content from './Content';
-import {host, hot} from 'react-hot-loader/root'
-import { IndexRoute } from 'react-router-dom'
+import {/* host, */ hot} from 'react-hot-loader/root'
+/* import { IndexRoute } from 'react-router-dom'
 import { Redirect } from 'react-router'
 import BattleRes from "./BattleRes";
 import {Link} from "react-router-dom";
-import { Router } from 'react-router-dom';
+import { Router } from 'react-router-dom'; */
 
 import { Route ,HashRouter,Switch} from 'react-router-dom'
 
