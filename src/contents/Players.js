@@ -190,7 +190,7 @@ event.nativeEvent.stopImmediatePropagation();
 
      const pitems=players.map(
          item => 
-         <li style={{width:'500px',listStyle:'none'}}>
+         <li style={{width:'500px',listStyle:'none'}} key={item}>
             <p>{item}</p>
             <div style={{backgroundColor:'rgba(0, 0, 0, 0.08)' ,visibility:this.reverseShows(item)}}>
                 {/* <button style={{border:'none',width:'50px',height:'50px',marginLeft:'450px'}} onClick={event=>this.handleXimg(item,event)}>
@@ -199,13 +199,13 @@ event.nativeEvent.stopImmediatePropagation();
             
                 <div style={{visibility:this.handleShows(item)}}>
                       <div  style={{display:this.handleInputButnShows(item)}}>
-                    <from onSubmit={e => this.handleSubmit(item)}>
+                    <form onSubmit={e => this.handleSubmit(item)}>
                 
-                    <input class={this.handleClassName(item)}  placeholder="Github UserName" type="text" style={{width:'250px',height:'30px'}}
+                    <input className={this.handleClassName(item)}  placeholder="Github UserName" type="text" style={{width:'250px',height:'30px'}}
                         ref={this.handleRefName(item)} />
                     <button style={{height:'30px',width:'150px',marginLeft:'25px',border:'none',textDecoration:'none',cursor:'pointer'}} onClick={this.handleSubmit}>commit</button>
             
-                    </from>
+                    </form>
                     </div> 
                 </div>
                <div style={{display:'flex'}}>
@@ -215,7 +215,7 @@ event.nativeEvent.stopImmediatePropagation();
                      <div><ImgShows img={this.state.img_url_2} login={this.state.Ulogin2}/></div>
                }
                <button style={{border:'none',width:'50px',height:'50px'}} onClick={event=>this.handleXimg(item,event)}>
-                    <i class="fa fa-close" style={{fontSize:'48px',color:'red'}}></i>
+                    <i className="fa fa-close" style={{fontSize:'48px',color:'red'}}></i>
                 </button>
                </div>
             </div>

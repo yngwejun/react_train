@@ -65,7 +65,7 @@ componentWillReceiveProps(props,nextProps){
        ];
     
      /* 打印按钮 */
-       const listItems=butn.map((btn)=><li btn1={btn} style={{listStyle:'none'}}>
+       const listItems=butn.map((btn)=><li btn1={btn} style={{listStyle:'none'}} key={btn}>
                                              <button  style={{border:'none',color:this.handleColor(btn),backgroundColor:'white',fontSize:'20px'}}
                                          onClick={()=>this.props.handlePath(btn)}>
                                                  {btn}

@@ -47,6 +47,116 @@
     from {transform: rotate(0deg);}
       to {transform: rotate(360deg);}
 }
+/* -------------------------- */
+.csshub-loader {
+		background: #FFF;
+		margin: 50px auto;
+		width: 100px;
+		height: 100px;
+		animation: spin 8s infinite;
+		-webkit-animation: spin 8s infinite;
+	}
+	.csshub-square {
+		background: #FA8D62;
+		border-radius: 5px;
+		float: left;
+		clear: right;
+		margin: 3px;
+		width: 27px;
+		height: 27px;
+		animation: disappear alternate 800ms infinite;
+		-webkit-animation: disappear alternate 800ms infinite;
+	}
+	.csshub-loader .csshub-square:nth-child(1) {
+		animation-delay: 200ms;
+		-webkit-animation-delay: 200ms;
+	}
+	.csshub-loader .csshub-square:nth-child(2) { 
+		animation-delay: 400ms; 
+		-webkit-animation-delay: 400ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(3) { 
+		animation-delay: 600ms; 
+		-webkit-animation-delay: 600ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(4) {
+		animation-delay: 400ms; 
+		-webkit-animation-delay: 400ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(5) {
+		animation-delay: 600ms; 
+		-webkit-animation-delay: 600ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(6) {
+		animation-delay: 800ms; 
+		-webkit-animation-delay: 800ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(7) {
+		animation-delay: 600ms; 
+		-webkit-animation-delay: 600ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(8) {
+		animation-delay: 800ms; 
+		-webkit-animation-delay: 800ms; 
+	}
+	.csshub-loader .csshub-square:nth-child(9) {
+		animation-delay: 1s; 
+		-webkit-animation-delay: 1s; 
+	}
+	@keyframes disappear {
+		0% {
+			background-color: #FA8D62;
+			transform: scale(1, 1);
+		}
+		100% {
+			background-color : #FFDE3F;
+			transform: scale(0, 0);
+		}
+	}
+	@-webkit-keyframes disappear {
+		0% {
+			background-color: #FA8D62;
+			transform: scale(1, 1);
+		}
+		100% {
+			background-color : #FFDE3F;
+			transform: scale(0, 0);
+		}
+	}
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(90deg);
+		}
+		50% {
+			transform: rotate(180deg);
+		}
+		75% {
+			transform: rotate(270deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	@-webkit-keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(90deg);
+		}
+		50% {
+			transform: rotate(180deg);
+		}
+		75% {
+			transform: rotate(270deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 
    </style>
     
@@ -57,13 +167,6 @@
     </script>
 </body>
 <script>
-/* function getUserInfo(username){ */
-    /* https://api.github.com/users/123?client_id=YOUR_CLIENT_ID&client_secret=YOUR_SECRET_ID */
-  /*   return axios.get(`https://api.github.com/users/${username}?client_id=YOUR_CLIENT_ID&client_secret=YOUR_SECRET_ID`);
-  }
-  function getHiddenInput(){
-     return {player1:$('.hiddeninputOne').attr('value'),
-    player2: $('.hiddeninputTwo').attr('value')}
-  } */
+
 </script>
 </html>

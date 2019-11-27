@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "3a37018caeb6c0c298c4";
+/******/ 	var hotCurrentHash = "48e44e57e21b68878704";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -44592,7 +44592,8 @@ function (_React$Component) {
           btn1: btn,
           style: {
             listStyle: 'none'
-          }
+          },
+          key: btn
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
           style: {
             border: 'none',
@@ -44985,6 +44986,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-infinite-scroller */ "./node_modules/react-infinite-scroller/index.js");
 /* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _CenterLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CenterLink */ "./src/contents/CenterLink.js");
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Loading */ "./src/contents/Loading.js");
 
 
 
@@ -45000,6 +45002,7 @@ __webpack_require__.r(__webpack_exports__);
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
   return a;
 };
+
 
 
 
@@ -45043,15 +45046,14 @@ function (_React$Component) {
 
             case 2:
               res = _context.sent;
-
-              /*        console.log('res',res.data); */
+              console.log('res', res.data);
               this.setState({
                 repos: res.data.items,
                 loading: false,
                 page: 1
               });
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -45074,7 +45076,7 @@ function (_React$Component) {
               });
 
               if (!(this.state.page == 0)) {
-                _context2.next = 9;
+                _context2.next = 10;
                 break;
               }
 
@@ -45083,21 +45085,20 @@ function (_React$Component) {
 
             case 4:
               res = _context2.sent;
-
-              /*    console.log('res',res.data); */
+              console.log('res', res.data);
               this.setState({
                 repos: res.data.items
               });
               this.setState({
                 loading: false
               });
-              _context2.next = 10;
+              _context2.next = 11;
               break;
 
-            case 9:
+            case 10:
               if (this.state.page > 1) {}
 
-            case 10:
+            case 11:
             case "end":
               return _context2.stop();
           }
@@ -45145,7 +45146,7 @@ function (_React$Component) {
 
       console.log("infobar测试输出：" + this.state.repos + this.props.scale);
       var n = 0;
-      var list = this.state.repos.map(function (item, key) {
+      var list = this.state.repos.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
           key: item.id,
           style: {
@@ -45220,10 +45221,12 @@ function (_React$Component) {
         }), item.open_issues_count));
       });
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", null, this.state.loading ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        className: "loading_wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        className: "loading spin"
-      })) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", {
+        style: {
+          width: '1200px',
+          height: '500px',
+          margin: '200px auto'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Loading__WEBPACK_IMPORTED_MODULE_10__["default"], null)) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", {
         style: {
           width: '1200px',
           display: 'flex',
@@ -45528,7 +45531,8 @@ function (_React$Component) {
             width: '280px',
             listStyle: 'none',
             textAlign: 'center'
-          }
+          },
+          key: item
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
           style: {
             textAlign: 'center'
@@ -45595,6 +45599,120 @@ var _default = ItemsBar;
 
   reactHotLoader.register(ItemsBar, "ItemsBar", "C:\\Users\\23774\\Desktop\\webre\\src\\contents\\ItemsBar.js");
   reactHotLoader.register(_default, "default", "C:\\Users\\23774\\Desktop\\webre\\src\\contents\\ItemsBar.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/contents/Loading.js":
+/*!*********************************!*\
+  !*** ./src/contents/Loading.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+
+
+var Loading =
+/*#__PURE__*/
+function (_React$Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Loading, _React$Component);
+
+  function Loading() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Loading);
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Loading).apply(this, arguments));
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Loading, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-loader",
+        style: {
+          margin: '0 auto'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "csshub-square"
+      }));
+    }
+  }, {
+    key: "__reactstandin__regenerateByEval",
+    // @ts-ignore
+    value: function __reactstandin__regenerateByEval(key, code) {
+      // @ts-ignore
+      this[key] = eval(code);
+    }
+  }]);
+
+  return Loading;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+var _default = Loading;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(Loading, "Loading", "C:\\Users\\23774\\Desktop\\webre\\src\\contents\\Loading.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\23774\\Desktop\\webre\\src\\contents\\Loading.js");
 })();
 
 ;
@@ -46062,7 +46180,8 @@ function (_React$Component) {
           style: {
             width: '500px',
             listStyle: 'none'
-          }
+          },
+          key: item
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", null, item), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           style: {
             backgroundColor: 'rgba(0, 0, 0, 0.08)',
@@ -46076,12 +46195,12 @@ function (_React$Component) {
           style: {
             display: _this2.handleInputButnShows(item)
           }
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("from", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("form", {
           onSubmit: function onSubmit(e) {
             return _this2.handleSubmit(item);
           }
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
-          "class": _this2.handleClassName(item),
+          className: _this2.handleClassName(item),
           placeholder: "Github UserName",
           type: "text",
           style: {
@@ -46119,7 +46238,7 @@ function (_React$Component) {
             return _this2.handleXimg(item, event);
           }
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
-          "class": "fa fa-close",
+          className: "fa fa-close",
           style: {
             fontSize: '48px',
             color: 'red'

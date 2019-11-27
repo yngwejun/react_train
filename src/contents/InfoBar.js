@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
 import CenterLink from "./CenterLink";
+import Loading from './Loading';
 
 
 /* 子组件一：数据单元显示组件： */
@@ -15,7 +16,7 @@ class InfoBar extends React.Component{
       /* ---------------------- */
        async componentDidMount() {  
                var res=await axios.get(this.props.scale); 
-        /*        console.log('res',res.data); */
+               console.log('res',res.data);
            
                this.setState({repos:res.data.items,loading:false,page:1});  
          
@@ -31,7 +32,7 @@ class InfoBar extends React.Component{
     if(this.state.page==0){
 
     let res=await axios.get(nextProps.scale); 
- /*    console.log('res',res.data); */
+    console.log('res',res.data);
     this.setState({repos:res.data.items});
     this.setState({loading:false});
     }else if(this.state.page>1){
@@ -63,7 +64,7 @@ async handleMore(page){
            
             var n=0;
             const list=this.state.repos.map(
-              (item,key)=>
+              (item)=>
                  <li key={item.id} 
                     style={{listStyle:'none',width:'280px',margin:'10px',backgroundColor:'rgba(0, 0, 0, 0.08)'}}
                  >
@@ -102,20 +103,25 @@ async handleMore(page){
                 );
               
                 return <div>
-                {this.state.loading?<div className="loading_wrap">
+                {this.state.loading?
+                <div style={{width:'1200px',height:'500px',margin:'200px auto'}}>
+                   <Loading/>
+                {/* <div className="loading_wrap">
                         <div className="loading spin">
                        </div>
-                   </div>:
+                   </div> */}
+              </div>     :
                     <ul style={{width:'1200px',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-around',margin:0,padding:0,alignContent:'space-between'
                           ,minHeight:'3900px'}}
                       
                       >
-                    
+                   
                      
   <InfiniteScroll 
                 style={{width:'1200px',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-around',margin:0,padding:0,alignContent:'space-between'
                 ,minHeight:'100px'}}
-               loader={<div style={{width:'1200px', magin:'0 auto',textAlign:'center',color:'blue'}} key={0}>下拉加载......................</div>}
+               loader={<div style={{width:'1200px', magin:'0 auto',textAlign:'center',color:'blue'}} key={0}>下拉加载......................</div>
+                       }
                hasMore={!this.state.loading}
             /*    threshold={250} */
                pageStart={0} 
@@ -148,7 +154,7 @@ async handleMore(page){
                   
                       {list}
      </InfiniteScroll>  
-               
+     
                 </ul>
                 }
                 </div>
