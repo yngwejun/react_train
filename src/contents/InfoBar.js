@@ -9,17 +9,17 @@ import Loading from './Loading';
 class InfoBar extends React.Component{
     constructor(props) {
             super(props);
-            this.state={repos:[],path:props.scale,loading:true};
+            this.state={repos:[],path:props.scale,loading:true,page:1};
          /*  this.setState(repos : ) */
       
         }
       /* ---------------------- */
        async componentDidMount() {  
                var res=await axios.get(this.props.scale); 
-               console.log('res',res.data);
+           /*     console.log('res',res.data); */
            
                this.setState({repos:res.data.items,loading:false,page:1});  
-         
+         console.log('---------执行------componentDitMount-----------')
                   
           
        } 
@@ -28,13 +28,16 @@ class InfoBar extends React.Component{
      /* -------------------------------------- */
    async  componentWillReceiveProps(nextProps){
 
-    this.setState({loading:true,page:0});
-    if(this.state.page==0){
-
+    this.setState({loading:true});
+    console.log('---------执行------componentWillReceiveProps-----settTrue------')
+    if(this.state.page==1){
+     
     let res=await axios.get(nextProps.scale); 
-    console.log('res',res.data);
+/*     console.log('res',res.data); */
     this.setState({repos:res.data.items});
+    console.log('---------执行------componentWillReceiveProps-------set数据----')
     this.setState({loading:false});
+    console.log('---------执行------componentWillReceiveProps------Setfalse-----')
     }else if(this.state.page>1){
     
          
@@ -58,9 +61,14 @@ async handleMore(page){
            console.log("当前拉取的url",this.props.scale+"&page="+n);
          
 }
+/* handleStart(page){
+   if(this.state.page==0){
+      return 2
+   }
+} */
         /* --------------------------------------------- */
         render(){
-           console.log("infobar测试输出："+this.state.repos+this.props.scale);
+           console.log("infobar测试输出：初始render渲染次数-------"+this.props.scale);
            
             var n=0;
             const list=this.state.repos.map(
@@ -124,7 +132,7 @@ async handleMore(page){
                        }
                hasMore={!this.state.loading}
             /*    threshold={250} */
-               pageStart={0} 
+               pageStart={2} 
 /*                useWindow={false} */
                loadMore={()=>this.handleMore(this.state.page)}
             

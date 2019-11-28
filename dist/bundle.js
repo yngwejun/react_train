@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "48e44e57e21b68878704";
+/******/ 	var hotCurrentHash = "a025b9596141996d798a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -37318,7 +37318,7 @@ function polyfill(Component) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45024,7 +45024,8 @@ function (_React$Component) {
     _this.state = {
       repos: [],
       path: props.scale,
-      loading: true
+      loading: true,
+      page: 1
     };
     /*  this.setState(repos : ) */
 
@@ -45046,12 +45047,14 @@ function (_React$Component) {
 
             case 2:
               res = _context.sent;
-              console.log('res', res.data);
+
+              /*     console.log('res',res.data); */
               this.setState({
                 repos: res.data.items,
                 loading: false,
                 page: 1
               });
+              console.log('---------执行------componentDitMount-----------');
 
             case 5:
             case "end":
@@ -45071,34 +45074,37 @@ function (_React$Component) {
           switch (_context2.prev = _context2.next) {
             case 0:
               this.setState({
-                loading: true,
-                page: 0
+                loading: true
               });
+              console.log('---------执行------componentWillReceiveProps-----settTrue------');
 
-              if (!(this.state.page == 0)) {
-                _context2.next = 10;
+              if (!(this.state.page == 1)) {
+                _context2.next = 12;
                 break;
               }
 
-              _context2.next = 4;
+              _context2.next = 5;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(nextProps.scale));
 
-            case 4:
+            case 5:
               res = _context2.sent;
-              console.log('res', res.data);
+
+              /*     console.log('res',res.data); */
               this.setState({
                 repos: res.data.items
               });
+              console.log('---------执行------componentWillReceiveProps-------set数据----');
               this.setState({
                 loading: false
               });
-              _context2.next = 11;
+              console.log('---------执行------componentWillReceiveProps------Setfalse-----');
+              _context2.next = 13;
               break;
 
-            case 10:
+            case 12:
               if (this.state.page > 1) {}
 
-            case 11:
+            case 13:
             case "end":
               return _context2.stop();
           }
@@ -45137,6 +45143,12 @@ function (_React$Component) {
         }
       }, null, this);
     }
+    /* handleStart(page){
+       if(this.state.page==0){
+          return 2
+       }
+    } */
+
     /* --------------------------------------------- */
 
   }, {
@@ -45144,7 +45156,7 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("infobar测试输出：" + this.state.repos + this.props.scale);
+      console.log("infobar测试输出：初始render渲染次数-------" + this.props.scale);
       var n = 0;
       var list = this.state.repos.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
@@ -45262,7 +45274,7 @@ function (_React$Component) {
         hasMore: !this.state.loading
         /*    threshold={250} */
         ,
-        pageStart: 0
+        pageStart: 2
         /*                useWindow={false} */
         ,
         loadMore: function loadMore() {
