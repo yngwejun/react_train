@@ -21,8 +21,12 @@ const scaleNames={
         this.state={path:scaleNames.path_all}
     }
     /* ------------------------------------ */
-
-
+/* shouldComponentUpdate(nextState){
+    if(this.state.path!==nextState.path){
+        return true
+    }
+}
+ */
 
 
     /* ------------------------------------------- */
@@ -68,7 +72,7 @@ const scaleNames={
     }}  
     render(){
      
-   console.log(this.state.path);
+   console.log('父组件Content路径状态：------------',this.state.path);
         return <div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}>
                <div style={{display :'flex'}}><CenterLink handlePath={this.handlePath.bind(this)} scale={this.state.path}/></div>
                <div style={{display :'flex',flexDirection:'row'}}><InfoBar scale={this.state.path} /></div>

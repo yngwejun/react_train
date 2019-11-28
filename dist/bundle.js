@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "bf2a2f75f62161d423be";
+/******/ 	var hotCurrentHash = "440c6cb3fd53f353d7c0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -37318,7 +37318,7 @@ function polyfill(Component) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44733,6 +44733,13 @@ function (_React$Component) {
   }
   /* ------------------------------------ */
 
+  /* shouldComponentUpdate(nextState){
+      if(this.state.path!==nextState.path){
+          return true
+      }
+  }
+   */
+
   /* ------------------------------------------- */
 
 
@@ -44770,7 +44777,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state.path);
+      console.log('父组件Content路径状态：------------', this.state.path);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         style: {
           display: 'flex',
@@ -45054,6 +45061,14 @@ function (_React$Component) {
         }
       }, null, this);
     }
+    /* --------------------------------------- */
+
+    /* shouldComponentUpdate(nextProps){
+       if(this.state.path!==nextProps.scale){
+           return true
+       }
+    } */
+
     /* -------------------------------------- */
 
   }, {
@@ -45064,15 +45079,16 @@ function (_React$Component) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
+              if (!(nextProps !== this.state.path)) {
+                _context2.next = 8;
+                break;
+              }
+
               this.setState({
                 loading: true
               });
               console.log('---------执行------componentWillReceiveProps-----settTrue------');
-
-              if (!(this.state.page == 1)) {
-                _context2.next = 10;
-                break;
-              }
+              /*    if(this.state.page==1){ */
 
               _context2.next = 5;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(nextProps.scale));
@@ -45084,13 +45100,9 @@ function (_React$Component) {
                 loading: false
               });
               console.log('---------执行------componentWillReceiveProps-------set数据-Setfalse---');
-              _context2.next = 11;
-              break;
+              /*   } */
 
-            case 10:
-              if (this.state.page > 1) {}
-
-            case 11:
+            case 8:
             case "end":
               return _context2.stop();
           }
@@ -45111,7 +45123,7 @@ function (_React$Component) {
             case 0:
               n = page + 1;
               _context3.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(this.props.scale + "&page=" + n));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(this.state.path + "&page=" + n));
 
             case 3:
               res = _context3.sent;
@@ -45246,6 +45258,7 @@ function (_React$Component) {
           minHeight: '100px'
         },
         loader: react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "end",
           style: {
             width: '1200px',
             magin: '0 auto',
@@ -45261,7 +45274,7 @@ function (_React$Component) {
         /*                useWindow={false} */
         ,
         loadMore: function loadMore() {
-          return _this2.handleMore(_this2.state.page);
+          return _this2.handleMore(_this2.state.page, _this2.state.path);
         } // 渲染出来的DOM元素name
 
         /* element: 'div' */

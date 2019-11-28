@@ -23,26 +23,27 @@ class InfoBar extends React.Component{
                   
           
        } 
-
-    
+/* --------------------------------------- */
+/* shouldComponentUpdate(nextProps){
+   if(this.state.path!==nextProps.scale){
+       return true
+   }
+} */
+   
      /* -------------------------------------- */
    async  componentWillReceiveProps(nextProps){
-
+     if(nextProps!==this.state.path){
     this.setState({loading:true});
     console.log('---------执行------componentWillReceiveProps-----settTrue------')
-    if(this.state.page==1){
+ /*    if(this.state.page==1){ */
      
     let res=await axios.get(nextProps.scale); 
 
     this.setState({repos:res.data.items,loading:false});
     console.log('---------执行------componentWillReceiveProps-------set数据-Setfalse---')
 
-    }else if(this.state.page>1){
-    
-         
-        
-    }
-
+  /*   } */
+   }
     }
     /* -------------------------------------- */
 
@@ -51,7 +52,7 @@ class InfoBar extends React.Component{
 async handleMore(page){
 
    let n=page+1;
-      let res=await axios.get(this.props.scale+"&page="+n);
+      let res=await axios.get(this.state.path+"&page="+n);
            
            let lastres=this.state.repos.concat(res.data.items);
            this.setState({
@@ -126,13 +127,13 @@ async handleMore(page){
   <InfiniteScroll 
                 style={{width:'1200px',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-around',margin:0,padding:0,alignContent:'space-between'
                 ,minHeight:'100px'}}
-               loader={<div style={{width:'1200px', magin:'0 auto',textAlign:'center',color:'blue'}} key={0}>下拉加载......................</div>
+               loader={<div className='end' style={{width:'1200px', magin:'0 auto',textAlign:'center',color:'blue'}} key={0}>下拉加载......................</div>
                        }
                hasMore={!this.state.loading}
             /*    threshold={250} */
                pageStart={2} 
 /*                useWindow={false} */
-               loadMore={()=>this.handleMore(this.state.page)}
+               loadMore={()=>this.handleMore(this.state.page,this.state.path)}
             
                 // 渲染出来的DOM元素name
 /* element: 'div' */
