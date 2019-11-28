@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a025b9596141996d798a";
+/******/ 	var hotCurrentHash = "bf2a2f75f62161d423be";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -37318,7 +37318,7 @@ function polyfill(Component) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44191,12 +44191,6 @@ function (_React$Component) {
       playerOneData: _this.props.playerOneData,
       playerTwoData: _this.props.playerTwoData
     };
-
-    _this.setState({
-      playerOneData: _this.props.playerOneData,
-      playerTwoData: _this.props.playerTwoData
-    });
-
     console.log(_this.state.playerOneData);
     return _this;
   }
@@ -44283,7 +44277,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-user",
+        className: "fa fa-user",
         style: {
           fontSize: '22px',
           color: 'rgba(230, 52, 40, 0.39)'
@@ -44293,7 +44287,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-users",
+        className: "fa fa-users",
         style: {
           fontSize: '22px',
           color: 'rgba(114, 186, 219, 0.39)'
@@ -44303,7 +44297,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-group",
+        className: "fa fa-group",
         style: {
           fontSize: '22px',
           color: 'rgba(65, 218, 78, 0.39)'
@@ -44313,7 +44307,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-code",
+        className: "fa fa-code",
         style: {
           fontSize: '22px',
           color: 'rgba(4, 61, 9, 0.39)'
@@ -44362,12 +44356,12 @@ function (_React$Component) {
         style: {
           marginBottom: '20px'
         }
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         style: {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-user",
+        className: "fa fa-user",
         style: {
           fontSize: '22px',
           color: 'rgba(230, 52, 40, 0.39)'
@@ -44377,7 +44371,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-users",
+        className: "fa fa-users",
         style: {
           fontSize: '22px',
           color: 'rgba(114, 186, 219, 0.39)'
@@ -44387,7 +44381,7 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-group",
+        className: "fa fa-group",
         style: {
           fontSize: '22px',
           color: 'rgba(65, 218, 78, 0.39)'
@@ -44397,12 +44391,12 @@ function (_React$Component) {
           marginTop: '20px'
         }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-        "class": "fa fa-code",
+        className: "fa fa-code",
         style: {
           fontSize: '22px',
           color: 'rgba(4, 61, 9, 0.39)'
         }
-      }), "repositories", p2_items.public_repos))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }), "repositories", p2_items.public_repos)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         style: {
           height: '20px'
         }
@@ -44527,10 +44521,7 @@ function (_React$Component) {
     _this.state = {
       path: _this.props.scale
     };
-
-    _this.setState({
-      path: _this.props.scale
-    });
+    /*  this.setState({path : this.props.scale}) */
 
     return _this;
   }
@@ -45079,7 +45070,7 @@ function (_React$Component) {
               console.log('---------执行------componentWillReceiveProps-----settTrue------');
 
               if (!(this.state.page == 1)) {
-                _context2.next = 12;
+                _context2.next = 10;
                 break;
               }
 
@@ -45088,29 +45079,26 @@ function (_React$Component) {
 
             case 5:
               res = _context2.sent;
-
-              /*     console.log('res',res.data); */
               this.setState({
-                repos: res.data.items
-              });
-              console.log('---------执行------componentWillReceiveProps-------set数据----');
-              this.setState({
+                repos: res.data.items,
                 loading: false
               });
-              console.log('---------执行------componentWillReceiveProps------Setfalse-----');
-              _context2.next = 13;
+              console.log('---------执行------componentWillReceiveProps-------set数据-Setfalse---');
+              _context2.next = 11;
               break;
 
-            case 12:
+            case 10:
               if (this.state.page > 1) {}
 
-            case 13:
+            case 11:
             case "end":
               return _context2.stop();
           }
         }
       }, null, this);
     }
+    /* -------------------------------------- */
+
     /* ---------------------------------------------- */
 
   }, {
@@ -45143,12 +45131,6 @@ function (_React$Component) {
         }
       }, null, this);
     }
-    /* handleStart(page){
-       if(this.state.page==0){
-          return 2
-       }
-    } */
-
     /* --------------------------------------------- */
 
   }, {
@@ -45158,9 +45140,10 @@ function (_React$Component) {
 
       console.log("infobar测试输出：初始render渲染次数-------" + this.props.scale);
       var n = 0;
-      var list = this.state.repos.map(function (item) {
+      var list = this.state.repos.map(function (item, key) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
-          key: item.id,
+          key: key,
+          index: key + 1,
           style: {
             listStyle: 'none',
             width: '280px',
@@ -45537,14 +45520,15 @@ function (_React$Component) {
       }];
       /* 遍历三个功能： */
 
-      var items = point.map(function (item) {
+      var items = point.map(function (item, key) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
           style: {
             width: '280px',
             listStyle: 'none',
             textAlign: 'center'
           },
-          key: item
+          key: key,
+          index: key + 1
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
           style: {
             textAlign: 'center'

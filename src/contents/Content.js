@@ -71,7 +71,7 @@ const scaleNames={
    console.log(this.state.path);
         return <div style={{display:'flex',flexDirection:'column',width:'1200px',margin:'0px auto',alignItem:'center'}}>
                <div style={{display :'flex'}}><CenterLink handlePath={this.handlePath.bind(this)} scale={this.state.path}/></div>
-               <div style={{display :'flex',flexDirection:'row'}}><InfoBar scale={this.state.path}/></div>
+               <div style={{display :'flex',flexDirection:'row'}}><InfoBar scale={this.state.path} /></div>
             </div>
         
     }

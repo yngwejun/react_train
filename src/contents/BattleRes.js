@@ -5,7 +5,7 @@ class BattleRes extends React.Component{
     constructor(props) {
         super(props);
         this.state={playerOneData:this.props.playerOneData,playerTwoData:this.props.playerTwoData}
-        this.setState({playerOneData:this.props.playerOneData,playerTwoData:this.props.playerTwoData})
+       
         console.log(this.state.playerOneData);
     }
     handleScoreP1(p1,p2){
@@ -50,10 +50,10 @@ class BattleRes extends React.Component{
                               </div>
                               <div style={{marginBottom:'20px'}}>
                                
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-user" style={{fontSize:'22px',color:'rgba(230, 52, 40, 0.39)'}}></i></div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-users" style={{fontSize:'22px',color:'rgba(114, 186, 219, 0.39)'}}></i>followers{p1_items.followers}</div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-group" style={{fontSize:'22px',color:'rgba(65, 218, 78, 0.39)'}}></i>following{p1_items.following}</div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-code" style={{fontSize:'22px',color:'rgba(4, 61, 9, 0.39)'}}></i>repositories{p1_items.public_repos}</div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-user" style={{fontSize:'22px',color:'rgba(230, 52, 40, 0.39)'}}></i></div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-users" style={{fontSize:'22px',color:'rgba(114, 186, 219, 0.39)'}}></i>followers{p1_items.followers}</div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-group" style={{fontSize:'22px',color:'rgba(65, 218, 78, 0.39)'}}></i>following{p1_items.following}</div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-code" style={{fontSize:'22px',color:'rgba(4, 61, 9, 0.39)'}}></i>repositories{p1_items.public_repos}</div>
                                
                               </div>
                                      <div style={{height:'20px'}}></div>
@@ -73,12 +73,12 @@ class BattleRes extends React.Component{
                                   <a style={{color:'red',textDecoration:'none'}} href={p2_items.html_url}>{p2_items.login}</a>
                               </div>
                               <div style={{marginBottom:'20px'}}>
-                                  <p>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-user" style={{fontSize:'22px',color:'rgba(230, 52, 40, 0.39)'}}></i></div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-users" style={{fontSize:'22px',color:'rgba(114, 186, 219, 0.39)'}}></i>followers{p2_items.followers}</div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-group" style={{fontSize:'22px',color:'rgba(65, 218, 78, 0.39)'}}></i>following{p2_items.following}</div>
-                                    <div style={{marginTop:'20px'}}><i class="fa fa-code" style={{fontSize:'22px',color:'rgba(4, 61, 9, 0.39)'}}></i>repositories{p2_items.public_repos}</div>
-                                  </p>
+                                  
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-user" style={{fontSize:'22px',color:'rgba(230, 52, 40, 0.39)'}}></i></div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-users" style={{fontSize:'22px',color:'rgba(114, 186, 219, 0.39)'}}></i>followers{p2_items.followers}</div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-group" style={{fontSize:'22px',color:'rgba(65, 218, 78, 0.39)'}}></i>following{p2_items.following}</div>
+                                    <div style={{marginTop:'20px'}}><i className="fa fa-code" style={{fontSize:'22px',color:'rgba(4, 61, 9, 0.39)'}}></i>repositories{p2_items.public_repos}</div>
+                                  
                               </div>
                                      <div style={{height:'20px'}}></div>
                           </div>

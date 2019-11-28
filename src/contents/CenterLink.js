@@ -14,7 +14,7 @@ class CenterLink extends React.Component{
         super(props);
   
       this.state={path : this.props.scale};
-     this.setState({path : this.props.scale})
+    /*  this.setState({path : this.props.scale}) */
      
     }
 
