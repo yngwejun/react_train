@@ -35,14 +35,14 @@ class InfoBar extends React.Component{
      if(nextProps!==this.state.path){
     this.setState({loading:true});
     console.log('---------执行------componentWillReceiveProps-----settTrue------')
- /*    if(this.state.page==1){ */
+
      
     let res=await axios.get(nextProps.scale); 
 
     this.setState({repos:res.data.items,loading:false});
     console.log('---------执行------componentWillReceiveProps-------set数据-Setfalse---')
 
-  /*   } */
+
    }
     }
     /* -------------------------------------- */

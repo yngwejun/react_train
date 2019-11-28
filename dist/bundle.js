@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "440c6cb3fd53f353d7c0";
+/******/ 	var hotCurrentHash = "08c5366844b5eb466872";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -45088,8 +45088,6 @@ function (_React$Component) {
                 loading: true
               });
               console.log('---------执行------componentWillReceiveProps-----settTrue------');
-              /*    if(this.state.page==1){ */
-
               _context2.next = 5;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(nextProps.scale));
 
@@ -45100,7 +45098,6 @@ function (_React$Component) {
                 loading: false
               });
               console.log('---------执行------componentWillReceiveProps-------set数据-Setfalse---');
-              /*   } */
 
             case 8:
             case "end":
